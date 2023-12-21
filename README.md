@@ -73,3 +73,5 @@ We welcome contributions from anyone! To contribute to this project, please foll
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/aydenjahola/Wordle/blob/main/LICENSE) file for details.
+
+https://blog.logrocket.com/deploying-react-apps-github-pages/

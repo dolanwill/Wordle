@@ -4,6 +4,7 @@ import Keyboard from "./components/Keyboard";
 import { boardDefault, generateWordSet } from "./Words";
 import React, { useState, createContext, useEffect } from "react";
 import GameOver from "./components/GameOver";
+import Picture from "./components/Picture";
 
 export const AppContext = createContext();
 
@@ -26,10 +27,10 @@ function App() {
   }, []);
 
   const onEnter = () => {
-    if (currAttempt.letter !== 5) return;
+    if (currAttempt.letter !== 4) return;
 
     let currWord = "";
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       currWord += board[currAttempt.attempt][i];
     }
     if (wordSet.has(currWord.toLowerCase())) {
@@ -43,7 +44,7 @@ function App() {
       return;
     }
     console.log(currAttempt);
-    if (currAttempt.attempt === 5) {
+    if (currAttempt.attempt === 4) {
       setGameOver({ gameOver: true, guessedWord: false });
       return;
     }
@@ -71,7 +72,7 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <h1>Wordle</h1>
+        <h1>Brudle</h1>
       </nav>
       <AppContext.Provider
         value={{
@@ -88,9 +89,10 @@ function App() {
           gameOver,
         }}
       >
-        <div className="game">
-          <Board />
-          {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+          <div className="game">
+              <Picture/>
+              <Board/>
+              {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         </div>
       </AppContext.Provider>
     </div>

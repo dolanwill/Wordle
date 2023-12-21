@@ -3,9 +3,8 @@ import Key from "./Key";
 import { AppContext } from "../App";
 
 function Keyboard() {
-  const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
-  const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
-  const keys3 = ["Z", "X", "C", "V", "B", "N", "M"];
+  const keys1 = ["1", "2", "3", "4", "5", ];
+  const keys2 = ["6", "7", "8", "9", "0", ];
 
   const {
     board,
@@ -31,11 +30,6 @@ function Keyboard() {
           }
         });
         keys2.forEach((key) => {
-          if (event.key.toLowerCase() === key.toLowerCase()) {
-            onSelectLetter(key);
-          }
-        });
-        keys3.forEach((key) => {
           if (event.key.toLowerCase() === key.toLowerCase()) {
             onSelectLetter(key);
           }
@@ -67,9 +61,6 @@ function Keyboard() {
       </div>
       <div className="line3">
         <Key keyVal={"ENTER"} bigKey />
-        {keys3.map((key) => {
-          return <Key keyVal={key} disabled={disabledLetters.includes(key)} />;
-        })}
         <Key keyVal={"DELETE"} bigKey />
       </div>
     </div>

@@ -1,6 +1,6 @@
 {
-  "homepage": "http://aydenjahola.github.io/Wordle",
-  "name": "wordle-aydenjahola",
+  "homepage": "http://dolanwill.github.io/Wordle",
+  "name": "brudle",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
